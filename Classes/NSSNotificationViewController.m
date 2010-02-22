@@ -118,6 +118,15 @@ NSSNotificationViewController *_sharedController;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+	[_backgroundView release];
+	[_notificationBar release];
+	[_notifications release];
+	[_keys release];
+	[_fadeTransition release];
+	[_durationTimer invalidate];
+	[_durationTimer release];
+	[_pauseTimer invalidate];
+	[_pauseTimer release];
     [super dealloc];
 }
 
